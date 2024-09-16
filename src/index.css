@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,333 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+/* CSS Reset */
+
+/* Home CSS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  background-color: #ffffff;
+  line-height: 1.6;
+  font-size: small;
+  width: 100vw;
+}
+p {
+  color: #0b0b0b;
+}
+p b {
+  color: #000080;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+.logo img {
+  height: 40px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 0 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+#site-list a.selected {
+  background-color: #c4d1e0; /* Background color for selected site */
+  color: #100f0fc7; /* Text color for selected site */
+  font-weight: bold; /* Make the selected site stand out */
+}
+.searchbar {
+  padding-top: 100px;
+}
+.search-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.search-area input,
+.search-area select {
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  height: 30px;
+  padding: 0 10px;
+  margin: 0;
+  line-height: 30px;
+}
+.search-area input {
+  flex: 1;
+  min-width: 200px;
+}
+.search-area select {
+  flex: 1;
+  min-width: 100px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 16% 83%;
+  gap: 20px;
+  padding: 5px;
+}
+.list-container {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  margin-bottom: 15px;
+}
+a {
+  text-decoration: none;
+  color: #000080;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #4682b4;
+}
+.details-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.box {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  height: 285px;
+}
+#box5 {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+.carousel-button.left {
+  left: 10px;
+}
+.carousel-button.right {
+  right: 10px;
+}
+/* WebKit browsers */
+.box::-webkit-scrollbar {
+  width: 8px;
+}
+.box::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+.box::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .search-area {
+    flex-direction: column;
+  }
+  .search-area input,
+  .search-area select {
+    min-width: 100%;
+  }
+}
+
+/* 3D model css */
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Prevents body scrolling */
+  position: relative; /* Ensure positioning context for absolutely positioned elements */
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #333;
+  color: white;
+  width: 100%; /* Ensure the header takes full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px; /* Adjust as needed */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+#container3D canvas {
+  width: 50vw !important;
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 0;
+}
+
+#container2D {
+  width: 50vw;
+  height: 100vh;
+  position: absolute; /* Change to absolute to place it within the viewport */
+  top: 0;
+  left: 50vw;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#container2D img {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  transform: none;
+  z-index: 0;
+}
+
+/* Position the button container */
+#buttonContainer {
+  position: absolute; /* Position relative to the parent element, which is body in this case */
+  top: 0;
+  left: 50vw; /* Align the container with the left edge of container2D */
+  width: 50vw; /* Full width of container2D */
+  height: 100vh; /* Full height of container2D */
+  z-index: 1000; /* Ensure buttons are on top of other content */
+}
+
+/* Common style for all buttons */
+.arrow-button {
+  position: absolute;
+  background-color: #5f6060;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style for previous button */
+#prevButton {
+  left: 0; /* Align to the left edge of buttonContainer */
+  top: 50%;
+}
+
+/* Style for next button */
+#nextButton {
+  right: 0; /* Align to the right edge of buttonContainer */
+  top: 50%;
+}
+
+/* Style for up button */
+#upButton {
+  left: 50%;
+  top: 11.5%;
+}
+
+/* Style for down button */
+#downButton {
+  left: 50%;
+  bottom: 5%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
